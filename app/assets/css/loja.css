@@ -1,0 +1,49 @@
+/*
+ * As paginas do kit (loja, produto, carrinho, conta, checkout) com as cores e
+ * fontes da aparencia do site (as variaveis do .tpl).
+ */
+.tpl {
+  --rh-font: var(--sans);
+  --rh-color-bg: var(--papel);
+  --rh-color-text: var(--tinta);
+  --rh-color-muted: var(--tinta-2);
+  --rh-color-border: var(--linha);
+  --rh-color-surface: var(--papel-2);
+  --rh-color-accent: var(--cereja);
+  --rh-color-accent-contrast: #FFFFFF;
+  --rh-coffee-accent: var(--cereja);
+  --rh-radius: 18px;
+  --rh-radius-sm: 8px;
+  --rh-max-width: 1200px;
+}
+
+.rh-form__title, .rh-shelf__title, .rh-product__name, .rh-section-title, .rh-panel__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+  letter-spacing: -.01em;
+  color: var(--tinta);
+}
+.rh-shelf__title, .rh-form__title { font-size: clamp(36px, 5vw, 60px); line-height: 1.02; }
+.rh-product__name { font-size: clamp(32px, 4vw, 50px); line-height: 1.05; }
+.rh-button { min-height: 52px; border-radius: 999px; background: var(--cereja); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.rh-button:hover { background: var(--cereja-2); opacity: 1; }
+.rh-card__badge { background: var(--tinta); color: var(--papel); }
+.rh-shelf, .rh-product, .rh-cart, .rh-checkout, .rh-account, .rh-purchase, .rh-auth, .rh-manufacturer { padding-top: 48px; padding-bottom: 96px; }
+
+/* Ferramentas do cabeçalho: a conta e a sacola do kit. */
+.fv-tools { display: flex; align-items: center; gap: 4px; }
+.fv-tools .rh-account-button, .fv-tools .rh-cart-button { color: var(--tinta); }
+.fv-tools .rh-cart-button__count { background: var(--cereja); color: #fff; }
+.fv-tools .rh-account-button__label { display: none; }
+
+/* Perfil Cafe do kit (produto): titulos na serifa do site, sem caixa-alta. */
+.rh-coffee__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+  text-transform: none;
+  letter-spacing: -.01em;
+  color: var(--tinta);
+}
+.rh-coffee__eyebrow { color: var(--cereja); letter-spacing: .24em; }

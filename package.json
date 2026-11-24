@@ -1,0 +1,24 @@
+{
+  "name": "template-cafe-0002",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Template de site de café de origem (00058), a partir do site do Flor do Vulcão: história da família, terroir, o café em destaque e do pé à xícara, com a loja do @ocahub/kit e seções editáveis no painel",
+  "scripts": {
+    "dev": "nuxt dev --port 3025",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "kit:sync": "npm --prefix ../rhfactor-kit run build && npm install --no-save --install-links ../rhfactor-kit --no-audit --no-fund",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@ocahub/kit": "^0.22.1",
+    "nuxt": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.0",
+    "vue-tsc": "^3.1.0"
+  }
+}

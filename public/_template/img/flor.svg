@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="#33231A" transform="translate(50 50)"><g id="p"><ellipse cx="0" cy="-24" rx="10" ry="20"/></g><use href="#p" transform="rotate(72)"/><use href="#p" transform="rotate(144)"/><use href="#p" transform="rotate(216)"/><use href="#p" transform="rotate(288)"/><circle r="7" fill="#B5432C"/></g></svg>

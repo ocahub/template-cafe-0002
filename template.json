@@ -1,0 +1,1380 @@
+{
+  "id": "template-cafe-0002",
+  "name": "Café 0002 · Origem",
+  "version": "1.0.0",
+  "description": "Café de origem de um produtor: a história da família, o terroir, o café em destaque com a ficha sensorial e do pé à xícara. Papel, kraft, tinta marrom e cereja.",
+  "cover": "preview.png",
+  "modules": [
+    "sales:CreateProduct"
+  ],
+  "groups": [
+    "Topo",
+    "Loja",
+    "Conteúdo",
+    "Contato"
+  ],
+  "theme": {
+    "palettes": [
+      {
+        "id": "kraft",
+        "label": "Kraft e cereja",
+        "primary": "#231F1C",
+        "primary2": "#35302B",
+        "accent": "#B5432C",
+        "accent2": "#963622",
+        "surface": "#CDA978",
+        "soft": "#E8D8BC",
+        "surface2": "#FBF8F1",
+        "bg": "#F6F0E4",
+        "ink": "#33231A",
+        "ink2": "#6B5646",
+        "leaf": "#4C6A3A",
+        "line": "#DCCFB8"
+      },
+      {
+        "id": "mata",
+        "label": "Mata e ouro",
+        "primary": "#1C2A22",
+        "primary2": "#2A3B31",
+        "accent": "#9C6B1E",
+        "accent2": "#7F5718",
+        "surface": "#B9B48A",
+        "soft": "#E3E2CC",
+        "surface2": "#FAFAF4",
+        "bg": "#F2F1E8",
+        "ink": "#1F2A22",
+        "ink2": "#55604F",
+        "leaf": "#4C6A3A",
+        "line": "#D5D4C2"
+      },
+      {
+        "id": "terra",
+        "label": "Terra e café",
+        "primary": "#2A1A14",
+        "primary2": "#3C2820",
+        "accent": "#C0622F",
+        "accent2": "#9E4E24",
+        "surface": "#D4A98A",
+        "soft": "#EFD9C8",
+        "surface2": "#FCF7F3",
+        "bg": "#F7EEE6",
+        "ink": "#3A241B",
+        "ink2": "#73584A",
+        "leaf": "#5E7244",
+        "line": "#E2CDBD"
+      }
+    ],
+    "fonts": [
+      {
+        "id": "fraunces",
+        "label": "Rótulo (Fraunces + Jost)",
+        "display": "'Fraunces', Georgia, serif",
+        "body": "'Jost', system-ui, sans-serif"
+      },
+      {
+        "id": "cormorant",
+        "label": "Clássica (Cormorant + Jost)",
+        "display": "'Cormorant Garamond', Georgia, serif",
+        "body": "'Jost', system-ui, sans-serif"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "header",
+      "label": "Cabeçalho",
+      "group": "Global",
+      "global": true,
+      "description": "Faixa do topo, logotipo, menu, conta e sacola. Aparece em todas as páginas.",
+      "skeleton": [
+        "@dark @center text:1",
+        "nav"
+      ],
+      "fields": [
+        {
+          "key": "notice",
+          "label": "Faixa do topo",
+          "type": "area",
+          "optional": true,
+          "help": "Ex.: Café especial do Sul de Minas. Vazio: sem faixa."
+        },
+        {
+          "key": "logoImage",
+          "label": "Logo (imagem)",
+          "type": "image",
+          "optional": true,
+          "help": "Sem imagem, vale o logotipo da loja; sem ele, o nome em texto."
+        },
+        {
+          "key": "links",
+          "label": "Links do menu",
+          "type": "items",
+          "min": 0,
+          "max": 7,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Texto",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text",
+              "help": "Ex.: /#cafe, /#historia, /sobre."
+            }
+          ],
+          "newItem": {
+            "label": "Novo link",
+            "link": "/"
+          }
+        },
+        {
+          "key": "shopLabel",
+          "label": "Nome da loja no menu",
+          "type": "text",
+          "help": "O link para a prateleira (/loja). Ex.: Loja, Cafés."
+        }
+      ]
+    },
+    {
+      "type": "hero",
+      "label": "Abertura com foto em arco",
+      "group": "Topo",
+      "description": "Chamada, título com destaque, texto, dois botões, números e a foto em arco com o selo girando.",
+      "skeleton": [
+        "eyebrow title:lg text:2 buttons stats:3 | image:tall"
+      ],
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Botão principal",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão principal",
+          "type": "text",
+          "help": "Ex.: /loja, /#contato ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "button2",
+          "label": "Botão secundário",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link2",
+          "label": "Link do botão secundário",
+          "type": "text",
+          "help": "Ex.: /loja, /#contato ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "facts",
+          "label": "Números",
+          "type": "items",
+          "min": 0,
+          "max": 3,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "title",
+              "label": "Número",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Detalhe",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "title": "100%",
+            "text": "arábica"
+          }
+        },
+        {
+          "key": "image",
+          "label": "Foto (vertical)",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "imageAlt",
+          "label": "Descrição da foto",
+          "type": "text",
+          "optional": true,
+          "help": "Para leitores de tela e o Google."
+        },
+        {
+          "key": "stampText",
+          "label": "Texto do selo girando",
+          "type": "text",
+          "optional": true,
+          "help": "Vazio: sem selo."
+        },
+        {
+          "key": "stampImage",
+          "label": "Ícone no centro do selo",
+          "type": "image",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "intro",
+      "label": "Apresentação de página",
+      "group": "Topo",
+      "description": "Topo de página interna: caminho, título, texto e foto ao lado.",
+      "skeleton": [
+        "@soft text:1 title text:2 | image"
+      ],
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "lead",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "image",
+          "label": "Foto",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "imageAlt",
+          "label": "Descrição da foto",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "label": "Manifesto (frase em destaque)",
+      "group": "Conteúdo",
+      "description": "Uma frase grande, centralizada, com ícone e assinatura.",
+      "skeleton": [
+        "@soft @center icons:1 quote text:1"
+      ],
+      "fields": [
+        {
+          "key": "image",
+          "label": "Ícone acima",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "text",
+          "label": "Frase",
+          "type": "area"
+        },
+        {
+          "key": "cite",
+          "label": "Quem diz / onde",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "background",
+          "label": "Fundo",
+          "type": "select",
+          "options": [
+            {
+              "value": "kraft",
+              "label": "Kraft"
+            },
+            {
+              "value": "claro",
+              "label": "Claro"
+            },
+            {
+              "value": "escuro",
+              "label": "Escuro"
+            },
+            {
+              "value": "papel",
+              "label": "Papel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "duo",
+      "label": "Duas palavras (o nome da marca)",
+      "group": "Conteúdo",
+      "description": "Título e duas palavras grandes lado a lado, cada uma com o seu texto, e um ícone no meio.",
+      "skeleton": [
+        "@center eyebrow title",
+        "items:2"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "items",
+          "label": "Palavras",
+          "type": "items",
+          "min": 2,
+          "max": 2,
+          "itemTitle": "word",
+          "fields": [
+            {
+              "key": "word",
+              "label": "Palavra",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "word": "Palavra",
+            "text": "O que ela significa."
+          }
+        },
+        {
+          "key": "image",
+          "label": "Ícone entre as palavras",
+          "type": "image",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "terroir",
+      "label": "Origem (fundo escuro)",
+      "group": "Conteúdo",
+      "description": "Fundo escuro com curvas de nível, título, texto, lista de características e foto.",
+      "skeleton": [
+        "@dark eyebrow title text:2 items:4 | image:tall"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "lead",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "items",
+          "label": "Características",
+          "type": "items",
+          "min": 0,
+          "max": 6,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "title",
+              "label": "Título",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "title": "Característica",
+            "text": "Detalhe."
+          }
+        },
+        {
+          "key": "image",
+          "label": "Foto (vertical)",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "imageAlt",
+          "label": "Descrição da foto",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "contours",
+          "label": "Curvas de nível ao fundo",
+          "type": "select",
+          "options": [
+            {
+              "value": "sim",
+              "label": "Sim"
+            },
+            {
+              "value": "nao",
+              "label": "Não"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "spotlight",
+      "label": "O café em destaque",
+      "group": "Loja",
+      "description": "A ficha do café: notas, torra, sensorial e o preço atual, com o botão para o produto.",
+      "skeleton": [
+        "image:tall | eyebrow title text:1 chips:3 items:3 buttons"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "tagline",
+          "label": "Linha de apoio",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "product",
+          "label": "Produto",
+          "type": "text",
+          "optional": true,
+          "help": "O endereço do produto no site (ex.: /produto/cafe-especial) ou só o final. Vazio: o primeiro produto da loja."
+        },
+        {
+          "key": "price",
+          "label": "Mostrar o preço",
+          "type": "select",
+          "options": [
+            {
+              "value": "sim",
+              "label": "Sim"
+            },
+            {
+              "value": "nao",
+              "label": "Não"
+            }
+          ]
+        },
+        {
+          "key": "image",
+          "label": "Foto (vertical)",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "imageAlt",
+          "label": "Descrição da foto",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "notesLabel",
+          "label": "Rótulo das notas",
+          "type": "text"
+        },
+        {
+          "key": "notes",
+          "label": "Notas",
+          "type": "items",
+          "min": 0,
+          "max": 6,
+          "itemTitle": "name",
+          "fields": [
+            {
+              "key": "name",
+              "label": "Nota",
+              "type": "text"
+            },
+            {
+              "key": "color",
+              "label": "Cor da bolinha",
+              "type": "text",
+              "optional": true,
+              "help": "Ex.: #B87A24. Vazio: kraft."
+            }
+          ],
+          "newItem": {
+            "name": "Nota",
+            "color": ""
+          }
+        },
+        {
+          "key": "roastLabel",
+          "label": "Rótulo da torra",
+          "type": "text"
+        },
+        {
+          "key": "roast",
+          "label": "Torra (na barra)",
+          "type": "select",
+          "options": [
+            {
+              "value": "0",
+              "label": "Não mostrar"
+            },
+            {
+              "value": "1",
+              "label": "Clara"
+            },
+            {
+              "value": "2",
+              "label": "Média-clara"
+            },
+            {
+              "value": "3",
+              "label": "Média"
+            },
+            {
+              "value": "4",
+              "label": "Média-escura"
+            },
+            {
+              "value": "5",
+              "label": "Escura"
+            }
+          ]
+        },
+        {
+          "key": "roastText",
+          "label": "Torra (texto)",
+          "type": "text"
+        },
+        {
+          "key": "rows",
+          "label": "Mais linhas da ficha",
+          "type": "items",
+          "min": 0,
+          "max": 5,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Item",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "label": "Item",
+            "text": "Texto"
+          }
+        },
+        {
+          "key": "button",
+          "label": "Botão principal",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão principal",
+          "type": "text",
+          "optional": true,
+          "help": "Vazio: a página do produto."
+        },
+        {
+          "key": "button2",
+          "label": "Botão secundário",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link2",
+          "label": "Link do botão secundário",
+          "type": "text",
+          "optional": true,
+          "help": "Vazio: a loja."
+        }
+      ]
+    },
+    {
+      "type": "shelf",
+      "label": "Vitrine de produtos",
+      "group": "Loja",
+      "description": "Os produtos à venda na loja, atuais.",
+      "skeleton": [
+        "title",
+        "products:4"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "lead",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "count",
+          "label": "Quantos produtos",
+          "type": "text",
+          "help": "De 1 a 24."
+        },
+        {
+          "key": "layout",
+          "label": "Arrumação",
+          "type": "select",
+          "options": [
+            {
+              "value": "grade",
+              "label": "Grade"
+            },
+            {
+              "value": "carrossel",
+              "label": "Carrossel"
+            }
+          ]
+        },
+        {
+          "key": "button",
+          "label": "Botão para a loja",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "family",
+      "label": "Quem cuida (pessoa e história)",
+      "group": "Conteúdo",
+      "description": "Foto da pessoa, selo redondo (ex.: 40+ anos), título, texto e assinatura.",
+      "skeleton": [
+        "image:tall | eyebrow title text:4 text:1"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area",
+          "help": "Pule uma linha para separar parágrafos."
+        },
+        {
+          "key": "image",
+          "label": "Foto (vertical)",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "imageAlt",
+          "label": "Descrição da foto",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "badgeTitle",
+          "label": "Selo: número",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: 40+. Vazio: sem selo."
+        },
+        {
+          "key": "badgeText",
+          "label": "Selo: texto",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "signature",
+          "label": "Assinatura",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "role",
+          "label": "Quem é",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "label": "Etapas (do pé à xícara)",
+      "group": "Conteúdo",
+      "description": "Título e as etapas numeradas, lado a lado.",
+      "skeleton": [
+        "title",
+        "steps:4"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "items",
+          "label": "Etapas",
+          "type": "items",
+          "min": 1,
+          "max": 4,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "title",
+              "label": "Etapa",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "title": "Etapa",
+            "text": "O que acontece."
+          }
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "label": "Galeria de fotos",
+      "group": "Conteúdo",
+      "description": "Três fotos: a primeira maior.",
+      "skeleton": [
+        "gallery:3"
+      ],
+      "fields": [
+        {
+          "key": "items",
+          "label": "Fotos",
+          "type": "items",
+          "min": 1,
+          "max": 3,
+          "itemTitle": "alt",
+          "fields": [
+            {
+              "key": "image",
+              "label": "Foto",
+              "type": "image"
+            },
+            {
+              "key": "alt",
+              "label": "Descrição",
+              "type": "text",
+              "optional": true
+            }
+          ],
+          "newItem": {
+            "image": "",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Texto",
+      "group": "Conteúdo",
+      "description": "Título e texto corrido.",
+      "skeleton": [
+        "title text:6"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "label": "Fale com a gente",
+      "group": "Contato",
+      "description": "Título, texto e cartões de WhatsApp, Instagram e e-mail (de Loja › Dados da loja › Contatos do site) e o lugar.",
+      "skeleton": [
+        "@soft title text:2 | items:3"
+      ],
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora (para links)",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: historia: o menu pode levar a /#historia."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada (acima do título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text",
+          "help": "Entre *asteriscos* sai em itálico, na cor de destaque. Ex.: Um nome que conta *a nossa história*."
+        },
+        {
+          "key": "lead",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "message",
+          "label": "Mensagem pronta do WhatsApp",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "place",
+          "label": "Lugar",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: Sítio Boa Vista."
+        },
+        {
+          "key": "city",
+          "label": "Cidade",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "label": "Rodapé",
+      "group": "Global",
+      "global": true,
+      "description": "Logotipo, texto, links da loja, do site e de contato, e o link de preferências de cookies. Aparece em todas as páginas.",
+      "skeleton": [
+        "@dark logo text:2 | links:3"
+      ],
+      "fields": [
+        {
+          "key": "logoImage",
+          "label": "Logo (imagem)",
+          "type": "image",
+          "optional": true,
+          "help": "Sem imagem, vale o logotipo da loja."
+        },
+        {
+          "key": "invertLogo",
+          "label": "Logo clareado (para fundo escuro)",
+          "type": "select",
+          "options": [
+            {
+              "value": "sim",
+              "label": "Sim"
+            },
+            {
+              "value": "nao",
+              "label": "Não"
+            }
+          ],
+          "help": "Use Sim para logotipo escuro em fundo claro."
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "shopLabel",
+          "label": "Nome da loja nos links",
+          "type": "text"
+        },
+        {
+          "key": "linksTitle",
+          "label": "Título da coluna de links",
+          "type": "text"
+        },
+        {
+          "key": "links",
+          "label": "Links",
+          "type": "items",
+          "min": 0,
+          "max": 6,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Texto",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "label": "Novo link",
+            "link": "/"
+          }
+        },
+        {
+          "key": "place",
+          "label": "Endereço",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "legal",
+          "label": "Linha legal",
+          "type": "text",
+          "optional": true,
+          "help": "Ex.: razão social e CNPJ. O ano entra sozinho."
+        }
+      ]
+    }
+  ],
+  "sectionDefaults": {
+    "header": {
+      "notice": "Café especial de origem · direto do produtor",
+      "logoImage": "",
+      "links": [
+        {
+          "label": "O café",
+          "link": "/#cafe"
+        },
+        {
+          "label": "Nossa história",
+          "link": "/#historia"
+        },
+        {
+          "label": "Origem",
+          "link": "/#origem"
+        },
+        {
+          "label": "Do pé à xícara",
+          "link": "/#processo"
+        },
+        {
+          "label": "Contato",
+          "link": "/#contato"
+        }
+      ],
+      "shopLabel": "Loja"
+    },
+    "hero": {
+      "eyebrow": "Sítio da família · Sul de Minas",
+      "title": "Café especial com a *cara da nossa terra*.",
+      "subtitle": "Cultivado pela mesma família há gerações. Solo, altitude e clima de montanha em cada xícara.",
+      "button": "Comprar o café",
+      "link": "/loja",
+      "button2": "Nossa história",
+      "link2": "/#historia",
+      "facts": [
+        {
+          "title": "1.200 m",
+          "text": "de altitude"
+        },
+        {
+          "title": "100%",
+          "text": "arábica"
+        },
+        {
+          "title": "30+",
+          "text": "anos de família"
+        }
+      ],
+      "image": "/_template/img/xicara.svg",
+      "imageAlt": "",
+      "stampText": "Café especial · Direto do produtor",
+      "stampImage": "/_template/img/flor.svg"
+    },
+    "intro": {
+      "eyebrow": "",
+      "title": "Sobre *nós*",
+      "lead": "Conte aqui a história da família, do sítio e do café.",
+      "image": "/_template/img/cafe.svg",
+      "imageAlt": ""
+    },
+    "quote": {
+      "image": "/_template/img/flor.svg",
+      "text": "“Mais do que um café, é a nossa família, a nossa terra e o cuidado de cada safra, na sua xícara.”",
+      "cite": "{empresa}",
+      "background": "kraft"
+    },
+    "duo": {
+      "anchor": "historia",
+      "eyebrow": "Por que este nome",
+      "title": "Um nome que conta *a nossa história*.",
+      "items": [
+        {
+          "word": "Terra",
+          "text": "O solo e o clima que dão personalidade ao nosso café."
+        },
+        {
+          "word": "Família",
+          "text": "As mãos que cuidam do cafezal há gerações."
+        }
+      ],
+      "image": "/_template/img/flor.svg"
+    },
+    "terroir": {
+      "anchor": "origem",
+      "eyebrow": "A origem",
+      "title": "Plantado onde o café *encontra o seu melhor*.",
+      "lead": "A combinação de solo, altitude e clima faz da nossa região uma das mais especiais do café brasileiro.",
+      "items": [
+        {
+          "title": "Solo rico",
+          "text": "Minerais que nutrem o cafeeiro e dão personalidade ao grão."
+        },
+        {
+          "title": "Altitude",
+          "text": "Maturação lenta, mais doçura e uma acidez mais viva."
+        },
+        {
+          "title": "Clima ameno",
+          "text": "Noites frescas e dias amenos, o equilíbrio que o café especial pede."
+        },
+        {
+          "title": "A região",
+          "text": "O nome do sítio e da cidade."
+        }
+      ],
+      "image": "/_template/img/cafe.svg",
+      "imageAlt": "",
+      "contours": "sim"
+    },
+    "spotlight": {
+      "anchor": "cafe",
+      "eyebrow": "O nosso café",
+      "title": "Café *Especial*",
+      "tagline": "100% arábica · de origem · torra média",
+      "product": "",
+      "price": "sim",
+      "image": "/_template/img/grao.svg",
+      "imageAlt": "",
+      "notesLabel": "Notas",
+      "notes": [
+        {
+          "name": "Caramelo",
+          "color": "#B87A24"
+        },
+        {
+          "name": "Chocolate",
+          "color": "#5B3423"
+        },
+        {
+          "name": "Frutas amarelas",
+          "color": "#D9A441"
+        }
+      ],
+      "roastLabel": "Torra",
+      "roast": "3",
+      "roastText": "Média",
+      "rows": [
+        {
+          "label": "Sensorial",
+          "text": "Doçura presente · corpo aveludado · acidez cítrica"
+        },
+        {
+          "label": "Tamanhos",
+          "text": "250 g · 500 g · 1 kg, em grão ou moído"
+        }
+      ],
+      "button": "Escolher tamanho e moagem",
+      "link": "",
+      "button2": "Ver a loja",
+      "link2": "/loja"
+    },
+    "shelf": {
+      "anchor": "",
+      "eyebrow": "Loja",
+      "title": "Os nossos *cafés*",
+      "lead": "",
+      "count": "4",
+      "layout": "grade",
+      "button": "Ver toda a loja"
+    },
+    "family": {
+      "anchor": "",
+      "eyebrow": "Quem cuida",
+      "title": "Uma tradição de família, *de geração em geração*.",
+      "text": "Há décadas a família cultiva café no sítio, com dedicação, respeito à terra e a busca constante pela qualidade.\n\nHoje a nova geração conduz a produção, com cuidado em cada etapa: do cultivo à colheita e à seleção dos grãos.",
+      "image": "/_template/img/cafe.svg",
+      "imageAlt": "",
+      "badgeTitle": "30+",
+      "badgeText": "anos de café na família",
+      "signature": "Nome",
+      "role": "Produtora · {empresa}"
+    },
+    "steps": {
+      "anchor": "processo",
+      "eyebrow": "Do pé à xícara",
+      "title": "Cuidado em *cada etapa*.",
+      "items": [
+        {
+          "title": "Cultivo",
+          "text": "Cafeeiros arábica conduzidos pela família."
+        },
+        {
+          "title": "Florada",
+          "text": "A flor do cafeeiro anuncia a safra."
+        },
+        {
+          "title": "Colheita e seleção",
+          "text": "Grãos escolhidos com atenção, para chegar só o melhor."
+        },
+        {
+          "title": "Torra",
+          "text": "O perfil de torra que realça a doçura e as notas do café."
+        }
+      ]
+    },
+    "gallery": {
+      "items": [
+        {
+          "image": "/_template/img/cafe.svg",
+          "alt": ""
+        },
+        {
+          "image": "/_template/img/xicara.svg",
+          "alt": ""
+        },
+        {
+          "image": "/_template/img/grao.svg",
+          "alt": ""
+        }
+      ]
+    },
+    "text": {
+      "anchor": "",
+      "eyebrow": "",
+      "title": "Título",
+      "text": "Escreva aqui o texto."
+    },
+    "contact": {
+      "anchor": "contato",
+      "eyebrow": "Fale com a gente",
+      "title": "Quer conhecer o sítio ou comprar para o seu café?",
+      "lead": "Atendemos pedidos para casa, cafeterias e empórios. Fale com a gente.",
+      "message": "Olá! Quero saber mais sobre o café.",
+      "place": "",
+      "city": ""
+    },
+    "footer": {
+      "logoImage": "",
+      "invertLogo": "nao",
+      "text": "Café especial de origem, cultivado pela família.",
+      "shopLabel": "Loja",
+      "linksTitle": "O sítio",
+      "links": [
+        {
+          "label": "Nossa história",
+          "link": "/#historia"
+        },
+        {
+          "label": "Origem",
+          "link": "/#origem"
+        },
+        {
+          "label": "Do pé à xícara",
+          "link": "/#processo"
+        }
+      ],
+      "place": "",
+      "legal": "{empresa}"
+    }
+  },
+  "defaults": {
+    "theme": {
+      "palette": "kraft",
+      "fonts": "fraunces"
+    },
+    "pages": [
+      {
+        "title": "Início",
+        "slug": "/",
+        "menu": false,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "hero",
+          "quote",
+          "duo",
+          "terroir",
+          "spotlight",
+          "family",
+          "steps",
+          "gallery",
+          "contact"
+        ]
+      },
+      {
+        "title": "Sobre nós",
+        "slug": "/sobre",
+        "menu": true,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "intro",
+          "family",
+          "steps"
+        ]
+      }
+    ],
+    "newPage": [
+      "intro",
+      "text",
+      "contact"
+    ]
+  },
+  "variableKeys": [
+    "empresa",
+    "whatsapp",
+    "telefone",
+    "email",
+    "endereco",
+    "instagram"
+  ],
+  "variables": "Os textos aceitam {empresa}, {whatsapp}, {telefone}, {email}, {endereco} e {instagram}: o site mostra os contatos de Loja › Dados da loja › Contatos do site. Nos títulos, o que estiver entre *asteriscos* sai em itálico, na cor de destaque."
+}
