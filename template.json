@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Café de origem de um produtor: a história da família, o terroir, o café em destaque com a ficha sensorial e do pé à xícara. Papel, kraft, tinta marrom e cereja.",
   "cover": "preview.png",
+  "screenshot": "preview-full.jpg",
   "modules": [
     "sales:CreateProduct"
   ],
